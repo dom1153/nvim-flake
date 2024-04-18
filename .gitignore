@@ -1,3 +1,5 @@
 result
+nvim
 .direnv
 .luarc.json
+build.log
