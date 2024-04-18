@@ -1,0 +1,4 @@
+---
+tasks:
+  - name: Echo example
+    cmd: echo 'Current file = ${file}'

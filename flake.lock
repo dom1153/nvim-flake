@@ -109,7 +109,8 @@
       "inputs": {
         "flake-utils": "flake-utils",
         "gen-luarc": "gen-luarc",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_2",
+        "toggletasks": "toggletasks"
       }
     },
     "systems": {
@@ -124,6 +125,22 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "toggletasks": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1678304457,
+        "narHash": "sha256-/WGoo6g5UCRnE+AzkAH1R/T2t2UuJNn9Fh49tGe+Jr4=",
+        "owner": "jedrzejboczar",
+        "repo": "toggletasks.nvim",
+        "rev": "7138dda86bd4ec908ef5342e78c60bfbd23f4506",
+        "type": "github"
+      },
+      "original": {
+        "owner": "jedrzejboczar",
+        "repo": "toggletasks.nvim",
         "type": "github"
       }
     }

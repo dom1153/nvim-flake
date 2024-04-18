@@ -26,6 +26,7 @@ with final.pkgs.lib; let
     # https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=vimPlugins
     nvim-treesitter.withAllGrammars
     luasnip # snippets | https://github.com/l3mon4d3/luasnip/
+
     # nvim-cmp (autocompletion) and extensions
     nvim-cmp # https://github.com/hrsh7th/nvim-cmp
     cmp_luasnip # snippets autocompletion extension for nvim-cmp | https://github.com/saadparwaiz1/cmp_luasnip/
@@ -76,7 +77,11 @@ with final.pkgs.lib; let
     nvim-web-devicons
     vim-repeat
 
+    # dump
+    toggleterm-nvim
+
     # bleeding-edge plugins from flake inputs
+    (mkNvimPlugin inputs.toggletasks "toggletasks")
     # (mkNvimPlugin inputs.wf-nvim "wf.nvim") # (example) keymap hints | https://github.com/Cassin01/wf.nvim
   ];
 
@@ -84,6 +89,8 @@ with final.pkgs.lib; let
     # language servers, etc.
     lua-language-server
     nil # nix LSP
+    # luajitPackages.lyaml ### toggletasks
+    lua54Packages.lyaml
   ];
 in {
   # This is the neovim derivation
