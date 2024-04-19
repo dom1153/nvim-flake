@@ -1,119 +1,100 @@
-local cmd = vim.cmd
+-- local cmd = vim.cmd
+-- local g = vim.g
 local fn = vim.fn
 local opt = vim.o
-local g = vim.g
 
--- require('base/options')
-require('user/options')
+-- require('user/options')
 
-opt.compatible = false
+-- You can also add relative line numbers, for help with jumping.
+--  Experiment for yourself to see if you like it!
+opt.number = true
+opt.relativenumber = true
 
--- Enable true colour support
+-- Enable mouse mode, can be useful for resizing splits for example!
+opt.mouse = 'a'
+
+-- Don't show the mode, since it's already in status line
+opt.showmode = false
+
+-- Sync clipboard between OS and Neovim.
+--  Remove this option if you want your OS clipboard to remain independent.
+--  See `:help 'clipboard'`
+opt.clipboard = 'unnamedplus'
+
+-- indent wrapped lines
+opt.breakindent = true
+
+-- Case-insensitive searching UNLESS \C or capital in search
+opt.ignorecase = true
+opt.smartcase = true
+opt.grepprg = 'rg --vimgrep'
+opt.grepformat = '%f:%l:%c:%m'
+
+-- Keep signcolumn on by default, prevents the screen from jumping
+opt.signcolumn = 'yes'
+
+-- Decrease update time
+opt.updatetime = 50 -- 4000ms by default, try 50, 250
+opt.timeoutlen = 10 -- (used for which-key)
+
+-- Set completeopt to have a better completion experience
+opt.completeopt = 'menuone,noselect,noinsert' -- mostly just for cmp
+
+-- Enable persistent undo history
+opt.swapfile = false
+opt.backup = false
+opt.undofile = true
+
+-- Configure how new splits should be opened
+opt.splitright = true
+opt.splitbelow = true
+
+-- Sets how neovim will display certain whitespace in the editor.
+--   See `:help 'list'`
+--   and `:help 'listchars'`
+opt.list = true
+opt.listchars = 'tab:» ,trail:-,nbsp:␣' -- eol:↲
+
+-- Preview substitutions live, as you type!
+opt.inccommand = 'split'
+
+-- Show which line your cursor is on
+opt.cursorline = true
+
+-- Set fold settings
+-- These options were reccommended by nvim-ufo
+-- See: https://github.com/kevinhwang91/nvim-ufo--minimal-configuration
+opt.foldcolumn = '0'
+opt.foldlevel = 99
+opt.foldlevelstart = 99
+opt.foldenable = true
+
+-- Minimal number of screen lines to keep above and below the cursor.
+opt.scrolloff = 8
+
+-- Set highlight on search, but clear on pressing <Esc> in normal mod
+opt.hlsearch = true
+
+-- Enables 24-bit RGB color in the |TUI|.
 if fn.has('termguicolors') then
   opt.termguicolors = true
 end
 
--- See :h <option> to see what the options do
+-- Set encoding type
+opt.encoding = 'utf-8'
+opt.fileencoding = 'utf-8'
 
--- Search down into subfolders
-opt.path = vim.o.path .. '**'
+-- More space in the neovim command line for displaying messages
+opt.cmdheight = 2
 
-opt.number = true
-opt.relativenumber = true
-opt.cursorline = true
-opt.lazyredraw = true
-opt.showmatch = true -- Highlight matching parentheses, etc
-opt.incsearch = true
-opt.hlsearch = true
+-- Maximum number of items to show in the popup menu (0 means "use available screen space")
+opt.pumheight = 0
 
-opt.spell = true
-opt.spelllang = 'en'
+-- save before executing certain commands
+opt.autowrite = true
 
-opt.expandtab = true
-opt.tabstop = 2
-opt.softtabstop = 2
-opt.shiftwidth = 2
-opt.foldenable = true
-opt.history = 2000
-opt.nrformats = 'bin,hex' -- 'octal'
-opt.undofile = true
-opt.splitright = true
-opt.splitbelow = true
-opt.cmdheight = 0
+-- Use conform-nvim for gq formatting. ('formatexpr' is set to vim.lsp.formatexpr(), so you can format lines via gq if the language server supports it)
+opt.formatexpr = "v:lua.require'conform'.formatexpr()"
 
-opt.updatetime = 50 -- 4000ms by default, try 50, 250
-opt.timeoutlen = 10 -- (used for which-key)
-
-opt.fillchars = [[eob: ,fold: ,foldopen:,foldsep: ,foldclose:]]
-
--- Configure Neovim diagnostic messages
-
-local function prefix_diagnostic(prefix, diagnostic)
-  return string.format(prefix .. ' %s', diagnostic.message)
-end
-
-local sign = function(opts)
-  fn.sign_define(opts.name, {
-    texthl = opts.name,
-    text = opts.text,
-    numhl = '',
-  })
-end
--- Requires Nerd fonts
-sign { name = 'DiagnosticSignError', text = '󰅚' }
-sign { name = 'DiagnosticSignWarn', text = '⚠' }
-sign { name = 'DiagnosticSignInfo', text = 'ⓘ' }
-sign { name = 'DiagnosticSignHint', text = '󰌶' }
-
-vim.diagnostic.config {
-  virtual_text = {
-    prefix = '',
-    format = function(diagnostic)
-      local severity = diagnostic.severity
-      if severity == vim.diagnostic.severity.ERROR then
-        return prefix_diagnostic('󰅚', diagnostic)
-      end
-      if severity == vim.diagnostic.severity.WARN then
-        return prefix_diagnostic('⚠', diagnostic)
-      end
-      if severity == vim.diagnostic.severity.INFO then
-        return prefix_diagnostic('ⓘ', diagnostic)
-      end
-      if severity == vim.diagnostic.severity.HINT then
-        return prefix_diagnostic('󰌶', diagnostic)
-      end
-      return prefix_diagnostic('■', diagnostic)
-    end,
-  },
-  signs = true,
-  update_in_insert = false,
-  underline = true,
-  severity_sort = true,
-  float = {
-    focusable = false,
-    style = 'minimal',
-    border = 'rounded',
-    source = 'if_many',
-    header = '',
-    prefix = '',
-  },
-}
-
-g.editorconfig = true
-
-vim.opt.colorcolumn = '100'
-
-vim.cmd.colorscheme('gruvbox')
-
--- Native plugins
-cmd.filetype('plugin', 'indent', 'on')
-cmd.packadd('cfilter') -- Allows filtering the quickfix list with :cfdo
-
--- let sqlite.lua (which some plugins depend on) know where to find sqlite
-vim.g.sqlite_clib_path = require('luv').os_getenv('LIBSQLITE')
-
--- this should be at the end, because
--- it causes neovim to source ftplugins
--- on the packpath when passing a file to the nvim command
-cmd.syntax('on')
-cmd.syntax('enable')
+-- disable text wrap by default
+opt.wrap = false

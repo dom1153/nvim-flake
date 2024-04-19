@@ -9,5 +9,9 @@ clean:
 	rm -f result
 
 .PHONY: run
-run: clean
+run:
+	 ./scripts/run.sh
+
+.PHONY: full
+full: clean result
 	 ./scripts/run.sh
