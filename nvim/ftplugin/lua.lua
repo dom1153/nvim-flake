@@ -18,6 +18,7 @@ local root_files = {
   '.git',
 }
 
+-- https://github.com/LuaLS/lua-language-server/wiki/Configuration-File
 vim.lsp.start {
   name = 'luals',
   cmd = { lua_ls_cmd },
