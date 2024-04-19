@@ -10,3 +10,8 @@
 ]]
 
 require('base/options')
+require('base/autocmd')
+require('base/neovide')
+
+-- require('keymaps/general')
+-- require('keymaps/toggles')

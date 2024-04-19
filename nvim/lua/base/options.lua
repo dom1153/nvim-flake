@@ -5,7 +5,7 @@ local opt = vim.o
 
 --[[ VIM GLOBALS ]]
 
--- <leader> key. Defaults to `\`. Some people prefer space.
+-- See `:help mapleader`
 g.mapleader = ' '
 g.maplocalleader = ' '
 
@@ -23,8 +23,8 @@ opt.mouse = 'a'
 opt.showmode = false
 
 -- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
+-- Remove this option if you want your OS clipboard to remain independent.
+-- See `:help 'clipboard'`
 opt.clipboard = 'unnamedplus'
 
 -- indent wrapped lines
