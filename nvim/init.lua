@@ -3,9 +3,8 @@ local fn = vim.fn
 local opt = vim.o
 local g = vim.g
 
--- <leader> key. Defaults to `\`. Some people prefer space.
-g.mapleader = ' '
-g.maplocalleader = ' '
+-- require('base/options')
+require('user/options')
 
 opt.compatible = false
 

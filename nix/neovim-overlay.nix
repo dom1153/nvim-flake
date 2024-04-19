@@ -89,8 +89,8 @@ with final.pkgs.lib; let
     # language servers, etc.
     lua-language-server
     nil # nix LSP
-    # luajitPackages.lyaml ### toggletasks
-    lua54Packages.lyaml
+
+    # lua54Packages.lyaml # luajitPackages.lyaml ### toggletasks
   ];
 in {
   # This is the neovim derivation
