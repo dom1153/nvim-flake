@@ -1,15 +1,3 @@
--- [[ UI CURSOR CONSISTENCY KEYMAPS ]]
--- Allow cursor to stay in the same place after J motion
-vim.keymap.set('n', 'J', 'mzJ`z', { silent = true })
-
--- <c-d> and <c-u> keep cursor in middle
-vim.keymap.set('n', '<C-d>', '<C-d>zz', { silent = true })
-vim.keymap.set('n', '<C-u>', '<C-u>zz', { silent = true })
-
--- Allow search terms to stay in the middle
-vim.keymap.set('n', 'n', 'nzzzv')
-vim.keymap.set('n', 'N', 'Nzzzv')
-
 -- [[ CLIPBOARD / REGISTER KEYMAPS ]]
 -- clipboard and register management (paste seems to inherit clipboard by default)
 vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y', { desc = 'Copy to system clipboard (motion)' })
@@ -17,25 +5,7 @@ vim.keymap.set({ 'n', 'v' }, '<leader>d', '"_d', { desc = 'Delete to void regist
 
 -- puts the overwritten text to the void buffer (clipboard stays the same)
 -- e.g. Allows you to highlight over text, paste over it with <leader>p, still keep clipboard
-vim.keymap.set({ 'x', 'v' }, '<leader>p', [["_dP]])
-
--- [[ NOP KEYMAPS  ]]
--- normal Q repeats the last recorded register [count] times
-vim.keymap.set('n', 'Q', '<nop>')
-
--- [[ CONVENIENCE KEYMAPS ]]
--- Esc -> <cmd>nohighlight
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
-
--- <C-c> instead of pressing esc (insert mode) just because
-vim.keymap.set('i', '<C-c>', '<Esc>')
-
--- <C-s> save
-vim.keymap.set({ 'i', 'n', 'x', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save file' })
-
--- qa/qq quit
-vim.keymap.set('n', '<leader>qa', '<cmd>qa<cr>', { desc = 'Quit All' })
-vim.keymap.set('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit All' })
+vim.keymap.set({ 'x', 'v' }, '<leader>p', [["_dP]], { desc = 'Paste over and preserve clipboard' })
 
 -- [[ BUFFER KEYMAPS ]]
 vim.keymap.set('n', '<leader>bd', '<cmd>bdelete<cr>', { desc = 'Delete buffer' })
@@ -89,3 +59,35 @@ vim.keymap.set('n', '<leader>w=', '<C-W>=', { silent = true, desc = 'Equally hig
 -- Mini.Hue
 vim.keymap.set('n', '<leader>ur', '<cmd>colorscheme randomhue<cr>', { silent = true, desc = 'Theme Random' })
 vim.keymap.set('n', '<leader>uR', '<cmd>colorscheme catppuccin<cr>', { silent = true, desc = 'Theme Catppuccin' })
+
+-- [[ VVV KEYMAPS WITH NO WHICH-KEY DESC BELOW VVV ]]
+
+-- [[ UI CURSOR CONVENIENCE KEYMAPS ]]
+-- Allow cursor to stay in the same place after J motion
+vim.keymap.set('n', 'J', 'mzJ`z', { silent = true })
+
+-- <c-d> and <c-u> keep cursor in middle
+vim.keymap.set('n', '<C-d>', '<C-d>zz', { silent = true })
+vim.keymap.set('n', '<C-u>', '<C-u>zz', { silent = true })
+
+-- Allow search terms to stay in the middle
+vim.keymap.set('n', 'n', 'nzzzv')
+vim.keymap.set('n', 'N', 'Nzzzv')
+
+-- [[ CONVENIENCE KEYMAPS ]]
+-- Esc -> <cmd>nohighlight
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+
+-- <C-c> instead of pressing esc (insert mode) just because
+vim.keymap.set('i', '<C-c>', '<Esc>')
+
+-- <C-s> save
+vim.keymap.set({ 'i', 'n', 'x', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save file' })
+
+-- qa/qq quit
+vim.keymap.set('n', '<leader>qa', '<cmd>qa<cr>', { desc = 'Quit All' })
+vim.keymap.set('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit All' })
+
+-- [[ NOP CONVENIENCE KEYMAPS ]]
+-- normal Q repeats the last recorded register [count] times
+vim.keymap.set('n', 'Q', '<nop>')

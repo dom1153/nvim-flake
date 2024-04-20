@@ -51,10 +51,6 @@ vim.o.foldenable = true
 vim.o.mouse = 'a'
 vim.o.clipboard = 'unnamedplus' -- Sync clipboard between OS and Neovim. :help clipboard
 
--- timeoutlen for which-key
-vim.o.updatetime = 50
-vim.o.timeoutlen = 10
-
 -- Enable persistent undo history
 vim.o.swapfile = false
 vim.o.backup = false

@@ -9,8 +9,8 @@
   Neovim sources them after loading plugin
 ]]
 
-require('base/options')
 require('base/autocmd')
+require('base/options')
 require('base/neovide')
 
 require('keymaps/general')
