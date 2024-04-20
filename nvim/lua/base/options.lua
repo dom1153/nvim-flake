@@ -1,17 +1,13 @@
 --[[ VIM GLOBALS ]]
---
-
 -- See `:help mapleader`
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 --[[ VIM OPTIONS ]]
---
 -- Note: vim.o and vim.opt are different ; opt allows you to interact with lua lists
 -- where vim.o uses the vimscript string style of 'arrays'
 
 --[[ UI OPTIONS ]]
---
 vim.o.number = true
 vim.o.relativenumber = true
 
@@ -52,7 +48,6 @@ vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 
 --[[ BEHAVIOR OPTIONS ]]
---
 vim.o.mouse = 'a'
 vim.o.clipboard = 'unnamedplus' -- Sync clipboard between OS and Neovim. :help clipboard
 

@@ -1,3 +1,4 @@
+-- [[ NEOVIDE ; NVIM GUI ]]
 local g = vim.g
 
 -- Neovide
