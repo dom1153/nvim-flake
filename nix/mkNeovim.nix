@@ -20,7 +20,7 @@ with lib;
     # The below arguments can typically be left as their defaults
     # Additional lua packages (not plugins), e.g. from luarocks.org.
     # e.g. p: [p.jsregexp]
-    extraLuaPackages ? p: [p.lyaml],
+    extraLuaPackages ? p: [p.lyaml], ### for toggletasks
     extraPython3Packages ? p: [], # Additional python 3 packages
     withPython3 ? true, # Build Neovim with Python 3 support?
     withRuby ? false, # Build Neovim with Ruby support?

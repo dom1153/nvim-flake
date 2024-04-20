@@ -68,9 +68,6 @@ vim.o.smartcase = true
 vim.o.grepprg = 'rg --vimgrep'
 vim.o.grepformat = '%f:%l:%c:%m'
 
--- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect,noinsert'
-
 -- save before executing certain commands (e.g. make)
 vim.o.autowrite = true
 

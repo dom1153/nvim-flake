@@ -4,7 +4,6 @@ end
 vim.g.did_load_which_key_plugin = true
 
 -- [[ VIM OPTIONS ]]
--- timeoutlen for which-key
 vim.o.timeoutlen = 10
 
 -- [[ DEFINES ]]

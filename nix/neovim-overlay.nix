@@ -77,6 +77,7 @@ with final.pkgs.lib; let
     vim-repeat
 
     # dump
+    conform-nvim
     neodev-nvim
     toggleterm-nvim
     catppuccin-nvim # https://github.com/catppuccin/nvim
@@ -92,7 +93,22 @@ with final.pkgs.lib; let
     nil # nix LSP
     lazygit
 
-    # lua54Packages.lyaml # luajitPackages.lyaml ### toggletasks
+    # formatters
+    stylua ### lua | An opinionated Lua code formatter
+    isort ### python | A Python utility / library to sort Python imports
+    black ### python |  The uncompromising Python code formatter
+    prettierd ### js |  Prettier, as a daemon
+    nodePackages.prettier ### js | Prettier is an opinionated code formatter
+    alejandra ### nix | The Uncompromising Nix Code Formatter
+    rustfmt ### rust | A tool for formatting Rust code according to style guidelines
+    google-java-format ### java |  zifter-google-java-format
+    fish ### fish
+    shfmt ### bash / sh
+    # shellharden ### bash formatting -> quotes too mnay things (e.g. lists...)
+    deno ### json
+    nodePackages.fixjson ### json
+    yamlfmt ### yaml | google
+    # python311Packages.yamlfix ### opinionated; issues installing on darwin (pip)
   ];
 in {
   # This is the neovim derivation

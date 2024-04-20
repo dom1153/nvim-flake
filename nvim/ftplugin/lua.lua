@@ -18,14 +18,29 @@ local root_files = {
   '.git',
 }
 
+---@return lsp.ClientCapabilities
+local function make_client_capabilities()
+  local capabilities = vim.lsp.protocol.make_client_capabilities()
+  -- Add com_nvim_lsp capabilities
+  local cmp_lsp = require('cmp_nvim_lsp')
+  local cmp_lsp_capabilities = cmp_lsp.default_capabilities()
+  capabilities = vim.tbl_deep_extend('keep', capabilities, cmp_lsp_capabilities)
+  -- Add any additional plugin capabilities here.
+  -- Make sure to follow the instructions provided in the plugin's docs.
+  return capabilities
+end
+
 -- https://github.com/LuaLS/lua-language-server/wiki/Configuration-File
 vim.lsp.start {
   name = 'luals',
   cmd = { lua_ls_cmd },
   root_dir = vim.fs.dirname(vim.fs.find(root_files, { upward = true })[1]),
-  capabilities = require('user.lsp').make_client_capabilities(),
+  capabilities = make_client_capabilities(),
   settings = {
     Lua = {
+      completion = {
+        callSnippet = 'Replace',
+      },
       runtime = {
         version = 'LuaJIT',
       },
@@ -43,7 +58,7 @@ vim.lsp.start {
         },
       },
       workspace = {
-        checkThirdParty = false,
+        -- checkThirdParty = false,
       },
       telemetry = {
         enable = false,
