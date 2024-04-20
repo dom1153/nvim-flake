@@ -3,10 +3,14 @@ if vim.g.did_load_which_key_plugin then
 end
 vim.g.did_load_which_key_plugin = true
 
+-- [[ VIM OPTIONS ]]
 -- timeoutlen for which-key
 vim.o.timeoutlen = 10
 
+-- [[ DEFINES ]]
 local which_key = require('which-key')
+
+-- [[ SETUP ]]
 
 -- :help which-key.nvim-which-key-configuration
 which_key.setup {
@@ -21,6 +25,7 @@ which_key.setup {
   },
 }
 
+-- [[ KEYMAPS ]]
 -- :help which-key.nvim-which-key-setup
 local spacing = '  '
 which_key.register({

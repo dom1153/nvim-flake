@@ -10,8 +10,17 @@ clean:
 
 .PHONY: run
 run:
-	 ./scripts/run.sh
+	./scripts/run.sh
 
 .PHONY: full
-full: result
-	 ./scripts/run.sh
+full:
+	./scripts/build.sh
+	./scripts/run.sh
+
+.PHONY: wbuild
+wbuild:
+	watchman-make -p 'lua/**/*.lua' 'nix/**/.nix' -t all
+
+.PHONY: wrun
+wrun:
+	watchman-make -p 'result' -t run
