@@ -79,6 +79,7 @@ with final.pkgs.lib; let
 
     # dump
     toggleterm-nvim
+    catppuccin-nvim # https://github.com/catppuccin/nvim
 
     # bleeding-edge plugins from flake inputs
     (mkNvimPlugin inputs.toggletasks "toggletasks")
