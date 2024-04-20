@@ -28,12 +28,19 @@ local function fuzzy_grep_current_file_type()
   grep_current_file_type(fuzzy_grep)
 end
 
+local function buffer_mru()
+  vim.cmd('Telescope buffers sort_mru=true sort_lastused=true')
+end
+
 -- [[ TELESCOPE KEYMAPS ]]
 -- [f]ind group
 vim.keymap.set('n', "<leader>f'", builtin.marks, { desc = ' Marks' })
-vim.keymap.set('n', '<leader>f/', builtin.current_buffer_fuzzy_find, { desc = '  Grep (buffer)' })
+vim.keymap.set('n', '<leader>f/', builtin.current_buffer_fuzzy_find, { desc = ' Grep (buffer)' })
+vim.keymap.set('n', '<leader>fb', buffer_mru, { desc = ' Buffers' })
 vim.keymap.set('n', '<leader>f:', builtin.command_history, { desc = ' Command history' })
 vim.keymap.set('n', '<leader>ft', builtin.builtin, { desc = ' [T]elescope pickers' })
+-- TODO: undotree
+-- vim.keymap.set('n', '<leader>fu', '<cmd>Telescope undo<CR>', { desc = 'Undo tree' })
 -- [g]it group
 vim.keymap.set('n', '<leader>gd', builtin.git_bcommits, { desc = ' Git diff history' })
 vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = ' Git files' })
