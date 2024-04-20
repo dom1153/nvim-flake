@@ -13,5 +13,5 @@ run:
 	 ./scripts/run.sh
 
 .PHONY: full
-full: clean result
+full: result
 	 ./scripts/run.sh

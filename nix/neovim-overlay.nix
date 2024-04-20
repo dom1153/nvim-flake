@@ -41,14 +41,14 @@ with final.pkgs.lib; let
     # ^ nvim-cmp extensions
 
     # git integration plugins
-    diffview-nvim # https://github.com/sindrets/diffview.nvim/
-    neogit # https://github.com/TimUntersberger/neogit/
     gitsigns-nvim # https://github.com/lewis6991/gitsigns.nvim/
-    vim-fugitive # https://github.com/tpope/vim-fugitive/
+    lazygit-nvim
 
     # telescope and extensions
     telescope-nvim # https://github.com/nvim-telescope/telescope.nvim/
-    telescope-fzy-native-nvim # https://github.com/nvim-telescope/telescope-fzy-native.nvim
+    telescope-fzy-native-nvim # https://github.com/nvim-telescope/telescope-fzy-native.nvim/
+
+    mini-nvim # https://github.com/echasnovski/mini.nvim/
     # telescope-smart-history-nvim # https://github.com/nvim-telescope/telescope-smart-history.nvim
 
     # UI
@@ -78,6 +78,7 @@ with final.pkgs.lib; let
     vim-repeat
 
     # dump
+    neodev-nvim
     toggleterm-nvim
     catppuccin-nvim # https://github.com/catppuccin/nvim
 
@@ -90,6 +91,7 @@ with final.pkgs.lib; let
     # language servers, etc.
     lua-language-server
     nil # nix LSP
+    lazygit
 
     # lua54Packages.lyaml # luajitPackages.lyaml ### toggletasks
   ];
