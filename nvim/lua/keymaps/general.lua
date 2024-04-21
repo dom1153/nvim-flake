@@ -12,10 +12,18 @@ vim.keymap.set('n', '<leader>bd', '<cmd>bdelete<cr>', { desc = 'Delete buffer' }
 vim.keymap.set('n', '<leader>bX', '<cmd>%bdelete<cr>', { desc = 'Delete all buffer' })
 
 -- [[ TAB KEYMAPS ]]
-vim.keymap.set('n', '<leader>tt', '<cmd>tabnew<cr>', { silent = true, desc = 'New Tab' })
+vim.keymap.set('n', '<leader>tc', '<cmd>tabnew<cr>', { silent = true, desc = '[C]reate new tab' })
 vim.keymap.set('n', '<leader>tx', '<cmd>tabclose<cr>', { silent = true, desc = 'Close tab' })
-vim.keymap.set('n', '<leader>tn', '<cmd>tabnext<cr>', { silent = true, desc = 'Next Tab' })
-vim.keymap.set('n', '<leader>tp', '<cmd>tabprevious<cr>', { silent = true, desc = 'Previous Tab' })
+-- tmux uses n and p
+vim.keymap.set('n', '<leader>tn', '<cmd>tabnext<cr>', { silent = true, desc = 'Next Tab (gt)' })
+vim.keymap.set('n', '<leader>tp', '<cmd>tabprevious<cr>', { silent = true, desc = 'Previous Tab (gT)' })
+vim.keymap.set('n', '<leader>tt', '<cmd>tabnext<cr>', { silent = true, desc = 'Next Tab (gt)' })
+vim.keymap.set('n', '<leader>tT', '<cmd>tabprevious<cr>', { silent = true, desc = 'Previous Tab (gT)' })
+-- hjkl corresponding to 1234
+vim.keymap.set('n', '<leader>th', '<cmd>tabn1<cr>', { silent = true, desc = 'Go Tab 1' })
+vim.keymap.set('n', '<leader>tj', '<cmd>tabn2<cr>', { silent = true, desc = 'Go Tab 2' })
+vim.keymap.set('n', '<leader>tk', '<cmd>tabn3<cr>', { silent = true, desc = 'Go Tab 3' })
+vim.keymap.set('n', '<leader>tl', '<cmd>tabn4<cr>', { silent = true, desc = 'Go Tab 4' })
 
 -- [[ WINDOW KEYMAPS ]]
 -- Window Navigation (standard)
