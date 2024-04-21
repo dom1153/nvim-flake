@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
-exe=${PWD}/result/bin/nvim
-# cd ~/tmp
-$exe
+if [[ -d result ]]; then
+	exe=${PWD}/result/bin/nvim
+	# cd ~/tmp
+	$exe
+fi

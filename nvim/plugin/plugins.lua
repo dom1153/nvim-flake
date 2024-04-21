@@ -3,4 +3,7 @@ if vim.g.did_load_plugins_plugin then
 end
 vim.g.did_load_plugins_plugin = true
 
--- do any empty require('plugin').setup() here
+-- for plugins with very barebone setups
+require('scrollview').setup {
+  signs_on_startup = {},
+}

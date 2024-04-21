@@ -26,6 +26,7 @@ with final.pkgs.lib; let
     # https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=vimPlugins
     nvim-treesitter.withAllGrammars
     luasnip # snippets | https://github.com/l3mon4d3/luasnip/
+    friendly-snippets
 
     # nvim-cmp (autocompletion) and extensions
     nvim-cmp # https://github.com/hrsh7th/nvim-cmp
@@ -57,6 +58,7 @@ with final.pkgs.lib; let
     statuscol-nvim # Status column | https://github.com/luukvbaal/statuscol.nvim/
     nvim-treesitter-context # nvim-treesitter-context
     which-key-nvim
+    nvim-scrollview
 
     # language support
 
@@ -77,8 +79,9 @@ with final.pkgs.lib; let
     vim-repeat
 
     # dump
+    nvim-lint
     conform-nvim
-    neodev-nvim
+    # neodev-nvim # appears to be provided courtesy of lua ftplugin
     toggleterm-nvim
     catppuccin-nvim # https://github.com/catppuccin/nvim
 
@@ -91,6 +94,7 @@ with final.pkgs.lib; let
     # language servers, etc.
     lua-language-server
     nil # nix LSP
+    clangStdenv # cpp
     lazygit
 
     # formatters
@@ -109,6 +113,14 @@ with final.pkgs.lib; let
     nodePackages.fixjson ### json
     yamlfmt ### yaml | google
     # python311Packages.yamlfix ### opinionated; issues installing on darwin (pip)
+
+    # linters
+    statix # nix
+    selene # lua
+    # python312.flake8 # python
+    # eslint_d # js / ts
+    # nodePackages.jsonLint # json
+    # checkstyle #java
   ];
 in {
   # This is the neovim derivation

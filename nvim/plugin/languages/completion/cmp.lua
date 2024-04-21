@@ -30,7 +30,7 @@ cmp.setup {
   },
   snippet = {
     expand = function(args)
-      require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+      luasnip.lsp_expand(args.body) -- For `luasnip` users.
     end,
   },
   formatting = {
@@ -63,9 +63,9 @@ cmp.setup {
     -- The insertion order influences the priority of the sources
     { name = 'nvim_lsp' },
     { name = 'nvim_lsp_signature_help' },
-    { name = 'nvim_lua' },
     { name = 'buffer', get_bufnrs = 'vim.api.nvim_list_bufs', keyword_length = 3 }, -- text within the buffer
     { name = 'path', keyword_length = 3 },
+    -- { name = 'nvim_lua' },
     { name = 'luasnip', keyword_length = 3 },
   },
   enabled = function()
@@ -76,5 +76,28 @@ cmp.setup {
     ghost_text = true,
   },
 }
+
+-- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline({ '/', '?' }, {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = {
+    { name = 'nvim_lsp_document_symbol', keyword_length = 3 },
+    { name = 'buffer' },
+    { name = 'cmdline_history' },
+  },
+  view = {
+    entries = { name = 'wildmenu', separator = '|' },
+  },
+})
+
+-- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
+cmp.setup.cmdline(':', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources {
+    { name = 'cmdline' },
+    { name = 'cmdline_history' },
+    { name = 'path' },
+  },
+})
 
 -- do I need to enable extensions?

@@ -19,7 +19,7 @@ full:
 
 .PHONY: wbuild
 wbuild:
-	watchman-make -p 'lua/**/*.lua' 'nix/**/*.nix' -t all
+	watchman-make -p '**/*.lua' '**/*.nix' -t all
 
 .PHONY: wrun
 wrun:
