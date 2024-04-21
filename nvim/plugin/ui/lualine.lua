@@ -98,11 +98,12 @@ require('lualine').setup({
   },
 
   tabline = {
-    lualine_a = { 'tabs' },
     lualine_b = {
       -- for non-standard filetypes like mini.files or telescope
       'filetype',
     },
+
+    lualine_z = { 'tabs' },
   },
 
   winbar = {
@@ -114,7 +115,7 @@ require('lualine').setup({
         'filename',
         path = 1, -- relative
         use_mode_colors = false,
-        cond = win_count,
+        -- cond = win_count, -- not smart enough unforunately (e.g. gcc causes flicker)
       },
     },
   },
