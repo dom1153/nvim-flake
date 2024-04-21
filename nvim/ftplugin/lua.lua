@@ -20,7 +20,7 @@ local root_files = {
 
 -- https://github.com/LuaLS/lua-language-server/wiki/Configuration-File
 vim.lsp.start {
-  name = 'luals',
+  name = 'lua_ls',
   cmd = { lua_ls_cmd },
   root_dir = vim.fs.dirname(vim.fs.find(root_files, { upward = true })[1]),
   capabilities = require('base.lsp').make_client_capabilities(),
@@ -46,7 +46,13 @@ vim.lsp.start {
         },
       },
       workspace = {
-        -- checkThirdParty = false,
+        checkThirdParty = false,
+        library = {
+          vim.env.VIMRUNTIME,
+          -- Depending on the usage, you might want to add additional paths here.
+          -- "${3rd}/luv/library"
+          -- "${3rd}/busted/library",
+        },
       },
       telemetry = {
         enable = false,

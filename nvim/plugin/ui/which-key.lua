@@ -54,4 +54,10 @@ which_key.register({
 
   -- code
   c = { name = '󰅬' .. spacing .. 'code' },
+
+  -- harpoon
+  h = { name = '󰈺' .. spacing .. 'Harpoon' },
+
+  -- ignore default binding for cheatsheet.nivm
+  ['?'] = { '<nop>', 'which_key_ignore' },
 }, { prefix = '<leader>' })

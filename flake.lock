@@ -110,6 +110,8 @@
         "flake-utils": "flake-utils",
         "gen-luarc": "gen-luarc",
         "nixpkgs": "nixpkgs_2",
+        "telescope-emoji": "telescope-emoji",
+        "telescope-glyph": "telescope-glyph",
         "toggletasks": "toggletasks"
       }
     },
@@ -125,6 +127,38 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "telescope-emoji": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1670503796,
+        "narHash": "sha256-8V3MTporANLtZkH0RuLviWlgMmR6fay0WmZ3ZOQzpKI=",
+        "owner": "xiyaowong",
+        "repo": "telescope-emoji.nvim",
+        "rev": "86248d97be84a1ce83f0541500ef9edc99ea2aa1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "xiyaowong",
+        "repo": "telescope-emoji.nvim",
+        "type": "github"
+      }
+    },
+    "telescope-glyph": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1661143906,
+        "narHash": "sha256-6H4afMXtaZn066oBq3z8vvR7WH7WhqZkvziyOXlsNVg=",
+        "owner": "ghassan0",
+        "repo": "telescope-glyph.nvim",
+        "rev": "f63f01e129e71cc25b79637610674bbf0be5ce9d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ghassan0",
+        "repo": "telescope-glyph.nvim",
         "type": "github"
       }
     },

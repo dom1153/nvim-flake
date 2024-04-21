@@ -1,3 +1,10 @@
+if vim.g.did_load_lsp_plugin then
+  return
+end
+vim.g.did_load_lsp_plugin = true
+
+-- general lsp *should be working via ftplugins
+
 -- [[ GENERAL LSP CONFIG ]]
 local _border = 'rounded'
 

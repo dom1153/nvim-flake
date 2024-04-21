@@ -1,0 +1,33 @@
+# (## are special meta-tags; the @ are tags (aliases)
+
+## nvim-surround @tpope
+Surround word with symbol | ysiw
+Surround line with symbol | yss
+(Delete) Surround nearest | ds
+(Delete) Surround nearest tag | dst
+Change surround tag (type new tag name) | cst
+
+## comment
+surround in comment | gcc
+surround in block comment | gbc
+
+## mini.files
+open help | <leader>?
+
+# there are better built in ones?
+## my-vim @nvim @neovim
+Go to parent brace | [%
+Search and replace with confirmation | :%s/s/r/gc
+Get Filetype | :set filetype?
+Get Colorscheme | :colorscheme
+Increase number | <C-A>
+Decrease number | <C-X>
+Get variable | :lua vim.print(vim.o.shell)
+Go to previous file | <C-6>
+Check make program | :set makeprg?
+Expand normal help-pages ("only window") | <c-w> <c-o>
+# https://stackoverflow.com/questions/9458294/open-url-under-cursor-in-vim-with-browser
+Open link under cursor (system app) | gx
+Uppercase motions | gU
+Lowercase motions | gu
+

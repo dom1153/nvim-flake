@@ -59,6 +59,8 @@ with final.pkgs.lib; let
     nvim-treesitter-context # nvim-treesitter-context
     which-key-nvim
     nvim-scrollview
+    tint-nvim
+    vim-illuminate
 
     # language support
 
@@ -77,16 +79,24 @@ with final.pkgs.lib; let
     plenary-nvim
     nvim-web-devicons
     vim-repeat
+    popup-nvim
 
     # dump
     nvim-lint
     conform-nvim
-    # neodev-nvim # appears to be provided courtesy of lua ftplugin
     toggleterm-nvim
     catppuccin-nvim # https://github.com/catppuccin/nvim
+    leap-nvim
+    comment-nvim
+    harpoon
+    auto-session
+    cheatsheet-nvim ### depends on plenary, popup
+    telescope-undo-nvim
 
     # bleeding-edge plugins from flake inputs
     (mkNvimPlugin inputs.toggletasks "toggletasks")
+    (mkNvimPlugin inputs.telescope-emoji "telescope-emoji")
+    (mkNvimPlugin inputs.telescope-glyph "telescope-glyph")
     # (mkNvimPlugin inputs.wf-nvim "wf.nvim") # (example) keymap hints | https://github.com/Cassin01/wf.nvim
   ];
 

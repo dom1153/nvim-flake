@@ -1,0 +1,1 @@
+-- after configs, specific to filetype just like normal ftplugin

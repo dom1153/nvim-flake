@@ -3,6 +3,7 @@ if vim.g.did_load_telescope_plugin then
 end
 vim.g.did_load_telescope_plugin = true
 
+-- [[ DEFINES ]]
 local telescope = require('telescope')
 local actions = require('telescope.actions')
 local builtin = require('telescope.builtin')
@@ -39,8 +40,9 @@ vim.keymap.set('n', '<leader>f/', builtin.current_buffer_fuzzy_find, { desc = '�
 vim.keymap.set('n', '<leader>fb', buffer_mru, { desc = ' Buffers' })
 vim.keymap.set('n', '<leader>f:', builtin.command_history, { desc = ' Command history' })
 vim.keymap.set('n', '<leader>ft', builtin.builtin, { desc = ' [T]elescope pickers' })
--- TODO: undotree
--- vim.keymap.set('n', '<leader>fu', '<cmd>Telescope undo<CR>', { desc = 'Undo tree' })
+vim.keymap.set('n', '<leader>fg', '<cmd>Telescope glyph<cr>', { desc = ' Nerfont glyphs' })
+vim.keymap.set('n', '<leader>fe', '<cmd>Telescope emoji<cr>', { desc = ' Emojis' })
+vim.keymap.set('n', '<leader>fu', '<cmd>Telescope undo<CR>', { desc = ' Undo tree' })
 -- [g]it group
 vim.keymap.set('n', '<leader>gd', builtin.git_bcommits, { desc = ' Git diff history' })
 vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = ' Git files' })
@@ -56,16 +58,51 @@ vim.keymap.set('n', '<leader>vr', builtin.oldfiles, { desc = ' Vim [r]ecent f
 -- base group
 vim.keymap.set('n', '<leader>/', fuzzy_grep, { desc = ' Grep files' })
 vim.keymap.set('n', '<leader><space>', builtin.find_files, { desc = ' Find files' })
+vim.keymap.set('n', '<leader>o', buffer_mru, { desc = ' Buffers' })
 
 -- [[ TELESCOPE SETUP ]]
-telescope.setup {
-  defaults = require('telescope.themes').get_dropdown {},
+telescope.setup({
+  -- need to override width/height for cheatsheet.nvim
+  defaults = require('telescope.themes').get_dropdown({
+    layout_config = {
+      width = 80,
+      height = 15,
+    },
+  }),
+  -- https://github.com/nvim-telescope/telescope.nvim/wiki/Extensions
   extensions = {
     fzy_native = {
       override_generic_sorter = false,
       override_file_sorter = true,
     },
+    emoji = {
+      -- -- emoji list supports https://emojipedia.org/emoji-4.0
+      -- -- emoji =  {name="", value="", cagegory="", description=""}
+      action = function(emoji)
+        -- copy to clipboard >:3
+        vim.fn.setreg('+', emoji.value)
+        -- insert emoji into buffer
+        vim.api.nvim_put({ emoji.value }, 'c', false, true)
+        -- notify user
+        print([[Selected "]] .. emoji.value .. [[" and copied to clipboard]])
+      end,
+    },
+    glyph = {
+      action = function(glyph)
+        -- copy to clipboard >:3
+        vim.fn.setreg('+', glyph.value)
+        -- insert glyph into buffer
+        vim.api.nvim_put({ glyph.value }, 'c', false, true)
+        -- notify user
+        print([[Selected "]] .. glyph.value .. [[" and copied to clipboard]])
+      end,
+    },
+    undo = {},
   },
-}
+})
 
+-- [[ LOAD EXTENSION CALLS ]]
+telescope.load_extension('emoji')
 telescope.load_extension('fzy_native')
+telescope.load_extension('glyph')
+telescope.load_extension('undo')

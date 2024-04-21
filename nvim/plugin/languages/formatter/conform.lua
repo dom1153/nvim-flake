@@ -3,6 +3,10 @@ if vim.g.did_load_conform_plugin then
 end
 vim.g.did_load_conform_plugin = true
 
+if true then
+  return
+end
+
 -- [[ VIM OPTIONS ]]
 
 -- [[ DEFINES ]]

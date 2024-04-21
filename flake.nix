@@ -5,17 +5,20 @@
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     gen-luarc.url = "github:mrcjkb/nix-gen-luarc-json";
+
+    ### git nvim package
     toggletasks = {
       url = "github:jedrzejboczar/toggletasks.nvim";
       flake = false;
     };
-
-    # Add bleeding-edge plugins here.
-    # They can be updated with `nix flake update` (make sure to commit the generated flake.lock)
-    # wf-nvim = {
-    #   url = "github:Cassin01/wf.nvim";
-    #   flake = false;
-    # };
+    telescope-emoji = {
+      url = "github:xiyaowong/telescope-emoji.nvim";
+      flake = false;
+    };
+    telescope-glyph = {
+      url = "github:ghassan0/telescope-glyph.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {
