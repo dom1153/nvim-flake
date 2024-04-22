@@ -24,6 +24,10 @@ vim.keymap.set('n', '<leader>th', '<cmd>tabn1<cr>', { silent = true, desc = 'Go 
 vim.keymap.set('n', '<leader>tj', '<cmd>tabn2<cr>', { silent = true, desc = 'Go Tab 2' })
 vim.keymap.set('n', '<leader>tk', '<cmd>tabn3<cr>', { silent = true, desc = 'Go Tab 3' })
 vim.keymap.set('n', '<leader>tl', '<cmd>tabn4<cr>', { silent = true, desc = 'Go Tab 4' })
+-- alt-n/p next prev tab
+vim.keymap.set('n', '<A-n>', '<cmd>tabnext<cr>', { silent = true, desc = 'Next Tab (gt)' })
+vim.keymap.set('n', '<A-p>', '<cmd>tabprevious<cr>', { silent = true, desc = 'Previous Tab (gT)' })
+-- NOTE: no new-tab because that would require a close-tab, and I only want that if I get a confirmation prompt
 
 -- [[ WINDOW KEYMAPS ]]
 -- Window Navigation (standard)
