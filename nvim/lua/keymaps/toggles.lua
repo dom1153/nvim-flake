@@ -27,9 +27,9 @@ function ToggleWrap()
 end
 
 -- [[ TOGGLE KEYMAPS ]]
-vim.keymap.set('v', '<leader>uw', ToggleWrap, { silent = true, desc = 'Toggle Wrap' })
-vim.keymap.set('v', '<leader>uL', ToggleRelativeLineNumber, { silent = true, desc = 'Toggle Relative Line Numbers' })
-vim.keymap.set('v', '<leader>ul', ToggleLineNumber, { silent = true, desc = 'Toggle Line Numbers' })
+vim.keymap.set('n', '<leader>uw', ToggleWrap, { silent = true, desc = 'Toggle Wrap' })
+vim.keymap.set('n', '<leader>uL', ToggleRelativeLineNumber, { silent = true, desc = 'Toggle Relative Line Numbers' })
+vim.keymap.set('n', '<leader>ul', ToggleLineNumber, { silent = true, desc = 'Toggle Line Numbers' })
 
 -- if vim.lsp.inlay_hint then
 --   vim.keymap.set('n', '<leader>uh', function()

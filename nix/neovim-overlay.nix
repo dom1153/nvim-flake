@@ -60,7 +60,7 @@ with final.pkgs.lib; let
     which-key-nvim
     nvim-scrollview
     tint-nvim
-    vim-illuminate
+    # vim-illuminate -> follows lsp? nah ; also does NOT require setup call
 
     # language support
 

@@ -44,8 +44,8 @@ tt_wrap(group_key, 'F', 'float', 'root')
 tt_wrap(group_key, 't', 'tab', 'local')
 tt_wrap(group_key, 'T', 'tab', 'root')
 
--- -- [[ toggleterm SETUP ]]
-require('toggleterm').setup {
+-- [[ toggleterm SETUP ]]
+require('toggleterm').setup({
   size = function(term)
     if term.direction == 'horizontal' then
       return vim.o.lines * 0.3
@@ -65,4 +65,4 @@ require('toggleterm').setup {
   -- :help :map-special-keys , <c-/>
   open_mapping = [[<c-_>]],
   direction = 'float',
-}
+})

@@ -16,7 +16,7 @@ vim.keymap.set('n', '<leader>e', mini_files_current_buffer, { desc = 'File Explo
 
 -- [[ MODULES ]]
 -- MiniFiles.config
-require('mini.files').setup {
+require('mini.files').setup({
   mappings = {
     show_help = '<leader>?',
   },
@@ -33,7 +33,7 @@ require('mini.files').setup {
     width_nofocus = 40,
     width_preview = 40,
   },
-}
+})
 
 -- mini buffer alternate keymaps
 vim.api.nvim_command([[
@@ -42,5 +42,7 @@ autocmd FileType minifiles nnoremap <buffer><silent>? <cmd>lua MiniFiles.show_he
 autocmd FileType minifiles-help nnoremap <buffer><silent><esc> <cmd>q<CR>
 ]])
 
+require('mini.cursorword').setup({})
+
 -- select mru buffer when deleting a buffer
-require('mini.bufremove').setup {}
+require('mini.bufremove').setup({})
