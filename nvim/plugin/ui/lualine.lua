@@ -78,7 +78,14 @@ local function tab_fmt(name, context)
 
   -- return num_to_jp_sym(context.tabnr) .. (mod == 1 and ' [+]' or '')
   -- return context.tabnr .. (mod == 1 and ' [+]' or '')
+
+  -- do this so [+] appears on the left, with nicer spacing
   return context.tabnr
+end
+
+-- it's a hack but it'll do
+local function filename_ignore_toggleterm()
+  return vim.bo.filetype ~= 'toggleterm'
 end
 
 -- [[ KEYMAPS ]]
@@ -106,6 +113,7 @@ require('lualine').setup({
     lualine_c = {
       {
         'filename',
+        cond = filename_ignore_toggleterm,
       },
     },
 
@@ -155,9 +163,7 @@ require('lualine').setup({
         'filename',
         path = 1, -- relative
         use_mode_colors = false,
-        cond = function()
-          return vim.bo.filetype ~= 'toggleterm'
-        end,
+        cond = filename_ignore_toggleterm,
         -- cond = win_count, -- not smart enough unforunately (e.g. gcc causes flicker)
       },
     },
@@ -169,9 +175,7 @@ require('lualine').setup({
         path = 1, -- relative
         use_mode_colors = false,
         separator = '',
-        cond = function()
-          return vim.bo.filetype ~= 'toggleterm'
-        end,
+        cond = filename_ignore_toggleterm,
       },
     },
   },
