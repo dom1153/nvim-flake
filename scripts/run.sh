@@ -2,6 +2,6 @@
 
 if [[ -d result ]]; then
 	exe=${PWD}/result/bin/nvim
-	# cd ~/tmp
+	cd ~/tmp
 	$exe
 fi

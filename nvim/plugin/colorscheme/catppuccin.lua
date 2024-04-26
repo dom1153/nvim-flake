@@ -19,6 +19,7 @@ require('catppuccin').setup({
     gitsigns = true,
     harpoon = true,
     illuminate = { enabled = true, lsp = false },
+    indent_blankline = { enabled = true, scope_color = 'lavender', colored_indent_levels = true },
     mini = { enabled = true, indentscope_color = '' },
     telescope = true,
     treesitter = true,

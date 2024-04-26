@@ -54,7 +54,7 @@ with final.pkgs.lib; let
 
     # UI
     lualine-nvim # Status line | https://github.com/nvim-lualine/lualine.nvim/
-    nvim-navic # Add LSP location to lualine | https://github.com/SmiteshP/nvim-navic
+    # nvim-navic # Add LSP location to lualine | https://github.com/SmiteshP/nvim-navic
     statuscol-nvim # Status column | https://github.com/luukvbaal/statuscol.nvim/
     nvim-treesitter-context # nvim-treesitter-context
     which-key-nvim
@@ -93,6 +93,9 @@ with final.pkgs.lib; let
     cheatsheet-nvim ### depends on plenary, popup
     telescope-undo-nvim
     obsidian-nvim
+    zen-mode-nvim
+    twilight-nvim
+    indent-blankline-nvim
 
     # bleeding-edge plugins from flake inputs
     (mkNvimPlugin inputs.toggletasks "toggletasks")

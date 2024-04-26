@@ -56,7 +56,7 @@ which_key.register({
   c = { name = '󰅬' .. spacing .. 'code' },
 
   -- harpoon
-  h = { name = '󰈺' .. spacing .. 'Harpoon' },
+  -- h = { name = '󰈺' .. spacing .. 'Harpoon' },
 
   -- filetype utilties
   j = { name = '' .. spacing .. 'Filetype' },

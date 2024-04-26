@@ -39,6 +39,8 @@ tt_wrap(group_key, 'v', 'vertical', 'local')
 tt_wrap(group_key, 'V', 'vertical', 'root')
 tt_wrap(group_key, 's', 'horizontal', 'local')
 tt_wrap(group_key, 'S', 'horizontal', 'root')
+tt_wrap(group_key, 'h', 'horizontal', 'local')
+tt_wrap(group_key, 'H', 'horizontal', 'root')
 tt_wrap(group_key, 'f', 'float', 'local')
 tt_wrap(group_key, 'F', 'float', 'root')
 tt_wrap(group_key, 't', 'tab', 'local')
@@ -62,7 +64,7 @@ require('toggleterm').setup({
       return vim.o.shell
     end
   end,
-  -- :help :map-special-keys , <c-/>
+  -- :help :map-special-keys , <c-/> (no default?)
   open_mapping = [[<c-_>]],
-  direction = 'float',
+  -- direction = 'float',
 })

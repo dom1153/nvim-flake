@@ -1,5 +1,6 @@
 -- [[ NEOVIDE ; NVIM GUI ]]
 local g = vim.g
+local o = vim.o
 
 -- Neovide
 if g.neovide then

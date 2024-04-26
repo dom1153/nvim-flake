@@ -6,6 +6,7 @@ vim.g.did_load_conform_plugin = true
 -- [[ VIM OPTIONS ]]
 vim.g.autoformat = true
 
+-- there exists a recipe to do conform toggle...
 vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = '*',
   callback = function(args)
@@ -95,6 +96,8 @@ require('conform').setup({
     yaml = { { 'yamlfmt' } },
 
     --## c/cpp seem to be covered by lsp or something
+
+    -- unsure how to make kdl autoformat (wants cli tools). oh well
 
     -- Use the "_" filetype to run formatters on filetypes that don't
     -- have other formatters configured.

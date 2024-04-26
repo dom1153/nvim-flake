@@ -6,12 +6,6 @@ vim.g.did_load_lauline_plugin = true
 -- [[ VIM OPTIONS ]]
 
 -- [[ DEFINES ]]
-local navic = require('nvim-navic')
-navic.setup({
-  lsp = {
-    auto_attach = true,
-  },
-})
 
 -- [[ HELPER FUNCTIONS ]]
 local function win_count()
@@ -53,13 +47,51 @@ local function lsp_server_name()
   return msg
 end
 
+local function logo()
+  return ' NEOVIM'
+end
+
+-- doesn't display well (appears to have a 'space' to the right'
+local function num_to_jp_sym(num)
+  local cases = {
+    [1] = '一',
+    [2] = '二',
+    [3] = '三',
+    [4] = '四',
+    [5] = '五',
+    [6] = '六',
+    [7] = '七',
+    [8] = '八',
+    [9] = '九',
+    [10] = '十',
+  }
+
+  return cases[num] or num
+end
+
+local function tab_fmt(name, context)
+  -- Show + if buffer is modified in tab
+  -- local buflist = vim.fn.tabpagebuflist(context.tabnr)
+  -- local winnr = vim.fn.tabpagewinnr(context.tabnr)
+  -- local bufnr = buflist[winnr]
+  -- local mod = vim.fn.getbufvar(bufnr, '&mod')
+
+  -- return num_to_jp_sym(context.tabnr) .. (mod == 1 and ' [+]' or '')
+  -- return context.tabnr .. (mod == 1 and ' [+]' or '')
+  return context.tabnr
+end
+
 -- [[ KEYMAPS ]]
 
 -- [[ SETUP ]]
 -- :h lualine-Default-configuration
 require('lualine').setup({
   options = {
+    theme = 'catppuccin',
     globalstatus = true, -- vim clean does not use global status
+    -- tabline separator color is broken. so we'll just disable them completely
+    component_separators = { left = '|', right = '|' },
+    section_separators = { left = '', right = '' },
   },
   sections = {
     lualine_a = {
@@ -98,23 +130,34 @@ require('lualine').setup({
   },
 
   tabline = {
-    lualine_b = {
-      -- for non-standard filetypes like mini.files or telescope
-      'filetype',
+    lualine_a = {
+      {
+        logo,
+      },
     },
 
-    lualine_z = { 'tabs' },
+    lualine_z = {
+      {
+        'tabs',
+        mode = 1, -- tab names (required to use fmt)
+        -- symbols = { modified = '' },
+        fmt = tab_fmt,
+      },
+    },
   },
 
   winbar = {
     lualine_b = {
       {
-        -- "placeholder",
-        -- separator = { left = " ", right = " " },
+        -- make separator a space to still allow transparent background for the rest of the winbar
+        separator = { left = '', right = ' ' },
         -- draw_empty = true,
         'filename',
         path = 1, -- relative
         use_mode_colors = false,
+        cond = function()
+          return vim.bo.filetype ~= 'toggleterm'
+        end,
         -- cond = win_count, -- not smart enough unforunately (e.g. gcc causes flicker)
       },
     },
@@ -125,6 +168,10 @@ require('lualine').setup({
         'filename',
         path = 1, -- relative
         use_mode_colors = false,
+        separator = '',
+        cond = function()
+          return vim.bo.filetype ~= 'toggleterm'
+        end,
       },
     },
   },

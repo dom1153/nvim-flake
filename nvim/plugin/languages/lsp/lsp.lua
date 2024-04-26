@@ -28,6 +28,7 @@ vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.s
 --   severity_sort = false,
 -- }
 
-require('lspconfig.ui.windows').default_options = {
-  border = _border,
-}
+-- VVV dependant on navic?
+-- require('lspconfig.ui.windows').default_options = {
+--   border = _border,
+-- }
