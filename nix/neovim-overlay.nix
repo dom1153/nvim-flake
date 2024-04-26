@@ -92,6 +92,7 @@ with final.pkgs.lib; let
     auto-session
     cheatsheet-nvim ### depends on plenary, popup
     telescope-undo-nvim
+    obsidian-nvim
 
     # bleeding-edge plugins from flake inputs
     (mkNvimPlugin inputs.toggletasks "toggletasks")

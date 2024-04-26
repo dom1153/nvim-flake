@@ -15,18 +15,18 @@ vim.keymap.set('n', '<leader>bX', '<cmd>%bdelete<cr>', { desc = 'Delete all buff
 vim.keymap.set('n', '<leader>tc', '<cmd>tabnew<cr>', { silent = true, desc = '[C]reate new tab' })
 vim.keymap.set('n', '<leader>tx', '<cmd>tabclose<cr>', { silent = true, desc = 'Close tab' })
 -- tmux uses n and p
-vim.keymap.set('n', '<leader>tn', '<cmd>tabnext<cr>', { silent = true, desc = 'Next Tab (gt)' })
-vim.keymap.set('n', '<leader>tp', '<cmd>tabprevious<cr>', { silent = true, desc = 'Previous Tab (gT)' })
-vim.keymap.set('n', '<leader>tt', '<cmd>tabnext<cr>', { silent = true, desc = 'Next Tab (gt)' })
-vim.keymap.set('n', '<leader>tT', '<cmd>tabprevious<cr>', { silent = true, desc = 'Previous Tab (gT)' })
+vim.keymap.set('n', '<leader>tn', '<cmd>tabnext<cr>', { silent = true, desc = 'Next tab (gt)' })
+vim.keymap.set('n', '<leader>tp', '<cmd>tabprevious<cr>', { silent = true, desc = 'Previous tab (gT)' })
+vim.keymap.set('n', '<leader>tt', '<cmd>tabnext<cr>', { silent = true, desc = 'Next tab (gt)' })
+vim.keymap.set('n', '<leader>tT', '<cmd>tabprevious<cr>', { silent = true, desc = 'Previous tab (gT)' })
 -- hjkl corresponding to 1234
-vim.keymap.set('n', '<leader>th', '<cmd>tabn1<cr>', { silent = true, desc = 'Go Tab 1' })
-vim.keymap.set('n', '<leader>tj', '<cmd>tabn2<cr>', { silent = true, desc = 'Go Tab 2' })
-vim.keymap.set('n', '<leader>tk', '<cmd>tabn3<cr>', { silent = true, desc = 'Go Tab 3' })
-vim.keymap.set('n', '<leader>tl', '<cmd>tabn4<cr>', { silent = true, desc = 'Go Tab 4' })
+vim.keymap.set('n', '<leader>th', '<cmd>tabn1<cr>', { silent = true, desc = 'Go tab 1' })
+vim.keymap.set('n', '<leader>tj', '<cmd>tabn2<cr>', { silent = true, desc = 'Go tab 2' })
+vim.keymap.set('n', '<leader>tk', '<cmd>tabn3<cr>', { silent = true, desc = 'Go tab 3' })
+vim.keymap.set('n', '<leader>tl', '<cmd>tabn4<cr>', { silent = true, desc = 'Go tab 4' })
 -- alt-n/p next prev tab
-vim.keymap.set('n', '<A-n>', '<cmd>tabnext<cr>', { silent = true, desc = 'Next Tab (gt)' })
-vim.keymap.set('n', '<A-p>', '<cmd>tabprevious<cr>', { silent = true, desc = 'Previous Tab (gT)' })
+vim.keymap.set('n', '<A-n>', '<cmd>tabnext<cr>', { silent = true, desc = 'Next tab (gt)' })
+vim.keymap.set('n', '<A-p>', '<cmd>tabprevious<cr>', { silent = true, desc = 'Previous tab (gT)' })
 -- NOTE: no new-tab because that would require a close-tab, and I only want that if I get a confirmation prompt
 
 -- [[ WINDOW KEYMAPS ]]
@@ -66,12 +66,6 @@ vim.keymap.set('n', '<leader>w_', '<C-W>_', { silent = true, desc = 'Max out the
 vim.keymap.set('n', '<leader>w|', '<C-W>|', { silent = true, desc = 'Max out the width' })
 vim.keymap.set('n', '<leader>w=', '<C-W>=', { silent = true, desc = 'Equally high and wide' })
 
--- [[ MISC KEYMAPS ]]
--- TODO: move to mini plugin
--- Mini.Hue
-vim.keymap.set('n', '<leader>ur', '<cmd>colorscheme randomhue<cr>', { silent = true, desc = 'Theme Random' })
-vim.keymap.set('n', '<leader>uR', '<cmd>colorscheme catppuccin<cr>', { silent = true, desc = 'Theme Catppuccin' })
-
 -- [[ VVV KEYMAPS WITH NO WHICH-KEY DESC BELOW VVV ]]
 
 -- [[ UI CURSOR CONVENIENCE KEYMAPS ]]
@@ -97,9 +91,14 @@ vim.keymap.set('i', '<C-c>', '<Esc>')
 vim.keymap.set({ 'i', 'n', 'x', 's' }, '<C-s>', '<cmd>w<cr><esc>', { desc = 'Save file' })
 
 -- qa/qq quit
-vim.keymap.set('n', '<leader>qa', '<cmd>qa<cr>', { desc = 'Quit All' })
-vim.keymap.set('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit All' })
+vim.keymap.set('n', '<leader>qa', '<cmd>qa<cr>', { desc = 'Quit all' })
+vim.keymap.set('n', '<leader>qq', '<cmd>qa<cr>', { desc = 'Quit all' })
+vim.keymap.set('n', '<leader>qA', '<cmd>qa!<cr>', { desc = 'Quit all (force)' })
+vim.keymap.set('n', '<leader>qQ', '<cmd>qa!<cr>', { desc = 'Quit all (force)' })
 
 -- [[ NOP CONVENIENCE KEYMAPS ]]
 -- normal Q repeats the last recorded register [count] times
 vim.keymap.set('n', 'Q', '<nop>')
+
+-- -- press esc to leave terminal mode
+-- vim.cmd([[tnoremap <Esc> <C-\><C-n>]])

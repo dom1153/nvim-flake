@@ -1,0 +1,44 @@
+https://www.lua.org/pil/22.1.html
+%a	abbreviated weekday name (e.g., Wed)
+%A	full weekday name (e.g., Wednesday)
+%b	abbreviated month name (e.g., Sep)
+%B	full month name (e.g., September)
+%c	date and time (e.g., 09/16/98 23:48:10)
+%d	day of the month (16) [01-31]
+%H	hour, using a 24-hour clock (23) [00-23]
+%I	hour, using a 12-hour clock (11) [01-12]
+%M	minute (48) [00-59]
+%m	month (09) [01-12]
+%p	either "am" or "pm" (pm)
+%S	second (10) [00-61]
+%w	weekday (3) [0-6 = Sunday-Saturday]
+%x	date (e.g., 09/16/98)
+%X	time (e.g., 23:48:10)
+%Y	full year (1998)
+%y	two-digit year (98) [00-99]
+%%	the character `%´
+
+https://create.roblox.com/docs/reference/engine/libraries/os#date
+%a	Abbreviated weekday name *	Mon
+%A	Full weekday name *	Monday
+%b	Abbreviated month name *	Feb
+%B	Full month name *	February
+%c	Date and time *	Mon Feb 12 14:14:35 2024
+%d	Day of the month	12
+%H	Hour, using 24-hour clock	14
+%I	Hour, using 12-hour clock	02
+%j	Day of year	043
+%m	Month	02
+%M	Minute	14
+%p	Either "AM" or "PM"	PM
+%S	Second	35
+%U	Week number (first Sunday as the first day of week one)	06
+%w	Weekday	1
+%W	Week number (first Monday as the first day of week one)	07
+%x	Date *	02/12/24
+%X	Time *	14:14:35
+%y	Two-digit year	24
+%Y	Full year	2024
+%z	ISO 8601 offset from UTC in timezone (1 minute = 1, 1 hour = 100)	-0800
+%Z	Timezone name or abbreviation *	PST
+%%	The % character	%

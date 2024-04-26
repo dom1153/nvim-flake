@@ -105,11 +105,24 @@
         "type": "github"
       }
     },
+    "obsidian-nvim": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-jX2B9E1qcUvxIVNIYC06DRZ+mWwARq7V9L5lu/5WeVo=",
+        "type": "file",
+        "url": "https://github.com/epwalsh/obsidian.nvim"
+      },
+      "original": {
+        "type": "file",
+        "url": "https://github.com/epwalsh/obsidian.nvim"
+      }
+    },
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
         "gen-luarc": "gen-luarc",
         "nixpkgs": "nixpkgs_2",
+        "obsidian-nvim": "obsidian-nvim",
         "telescope-emoji": "telescope-emoji",
         "telescope-glyph": "telescope-glyph",
         "toggletasks": "toggletasks"

@@ -12,7 +12,7 @@ local which_key = require('which-key')
 -- [[ SETUP ]]
 
 -- :help which-key.nvim-which-key-configuration
-which_key.setup {
+which_key.setup({
   icons = {
     separator = '-',
     group = '', -- using custom per-group icons
@@ -22,7 +22,7 @@ which_key.setup {
       'TelescopePrompt',
     },
   },
-}
+})
 
 -- [[ KEYMAPS ]]
 -- :help which-key.nvim-which-key-setup
@@ -57,6 +57,12 @@ which_key.register({
 
   -- harpoon
   h = { name = '󰈺' .. spacing .. 'Harpoon' },
+
+  -- filetype utilties
+  j = { name = '' .. spacing .. 'Filetype' },
+
+  -- obsidian
+  k = { name = '' .. spacing .. 'Obsidian' },
 
   -- ignore default binding for cheatsheet.nivm
   ['?'] = { '<nop>', 'which_key_ignore' },

@@ -84,3 +84,7 @@ vim.o.startofline = true
 -- TODO: put this in conform???
 -- Use conform-nvim for gq formatting. ('formatexpr' is set to vim.lsp.formatexpr(), so you can format lines via gq if the language server supports it)
 vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+
+-- remove the "How-to disable mouse" menu item and the separator above it (:h default-mouse)
+vim.cmd([[aunmenu PopUp.How-to\ disable\ mouse]])
+vim.cmd([[aunmenu PopUp.-1-]])

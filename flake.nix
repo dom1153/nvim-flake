@@ -19,6 +19,10 @@
       url = "github:ghassan0/telescope-glyph.nvim";
       flake = false;
     };
+    obsidian-nvim = {
+      url = "https://github.com/epwalsh/obsidian.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {

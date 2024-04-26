@@ -3,19 +3,14 @@ if vim.g.did_load_telescope_plugin then
 end
 vim.g.did_load_telescope_plugin = true
 
--- [[ VIM OPTIONS ]]
-vim.opt.completeopt = { 'menu', 'menuone', 'noinsert' }
-
+-- [[ VIM OPTIONS (vim.opt) ]]
 -- [[ DEFINES ]]
-local telescope = require('telescope')
-
--- [[ HELPER FUNCTIONS ]]
-local function fuzzy_grep(opts)
-  builtin.grep_string(opts)
-end
+-- local = require('')
+-- [[ LOCAL HELPER FUNCTIONS ]]
+-- local project_files = function()
 
 -- [[ KEYMAPS ]]
-vim.keymap.set('n', '<leader>/', fuzzy_grep, { desc = ' Grep files' })
+-- vim.keymap.set('n', '<map>', 'function', { desc = ' Grep files' })
 
 -- [[ SETUP ]]
-telescope.setup {}
+require('').setup({})
