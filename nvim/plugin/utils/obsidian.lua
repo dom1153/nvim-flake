@@ -21,9 +21,9 @@ end
 local smart_action = function()
   if util.cursor_on_markdown_link(nil, nil, true) then
     -- follow link if possible
-    return '<cmd>ObsidianFollowLink<CR>'
+    vim.cmd('ObsidianFollowLink')
   else
-    return my_toggle_checkbox
+    my_toggle_checkbox()
   end
 end
 
