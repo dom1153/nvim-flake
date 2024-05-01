@@ -11,3 +11,5 @@ vim.cmd([[au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe 
 
 -- :help -> :tab help
 vim.cmd([[cabbrev help tab help]])
+
+vim.o.clipboard = 'unnamedplus' -- Sync clipboard between OS and Neovim. :help clipboard
