@@ -105,27 +105,31 @@
         "type": "github"
       }
     },
-    "obsidian-nvim": {
-      "flake": false,
-      "locked": {
-        "narHash": "sha256-jX2B9E1qcUvxIVNIYC06DRZ+mWwARq7V9L5lu/5WeVo=",
-        "type": "file",
-        "url": "https://github.com/epwalsh/obsidian.nvim"
-      },
-      "original": {
-        "type": "file",
-        "url": "https://github.com/epwalsh/obsidian.nvim"
-      }
-    },
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
         "gen-luarc": "gen-luarc",
         "nixpkgs": "nixpkgs_2",
-        "obsidian-nvim": "obsidian-nvim",
+        "scribe-nvim": "scribe-nvim",
         "telescope-emoji": "telescope-emoji",
         "telescope-glyph": "telescope-glyph",
         "toggletasks": "toggletasks"
+      }
+    },
+    "scribe-nvim": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1675302532,
+        "narHash": "sha256-d8ne1XkaFlWJG4zNf7PO5C4OYv5ODCtnR+NzyLCBqvM=",
+        "owner": "Ostralyan",
+        "repo": "scribe.nvim",
+        "rev": "e1c95d6c86c88a199f8c94e7a2a835db2eaf28ea",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Ostralyan",
+        "repo": "scribe.nvim",
+        "type": "github"
       }
     },
     "systems": {

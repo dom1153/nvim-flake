@@ -80,6 +80,7 @@ with final.pkgs.lib; let
     nvim-web-devicons
     vim-repeat
     popup-nvim
+    nui-nvim
 
     # dump
     nvim-lint
@@ -101,6 +102,7 @@ with final.pkgs.lib; let
     (mkNvimPlugin inputs.toggletasks "toggletasks")
     (mkNvimPlugin inputs.telescope-emoji "telescope-emoji")
     (mkNvimPlugin inputs.telescope-glyph "telescope-glyph")
+    (mkNvimPlugin inputs.scribe-nvim "scribe") # depends on nui-nvim and telescope
     # (mkNvimPlugin inputs.wf-nvim "wf.nvim") # (example) keymap hints | https://github.com/Cassin01/wf.nvim
   ];
 

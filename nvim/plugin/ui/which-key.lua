@@ -64,6 +64,9 @@ which_key.register({
   -- obsidian
   k = { name = '' .. spacing .. 'Obsidian' },
 
+  -- scribe
+  s = { name = '' .. spacing .. 'Scratch' },
+
   -- ignore default binding for cheatsheet.nivm
   ['?'] = { '<nop>', 'which_key_ignore' },
 }, { prefix = '<leader>' })
