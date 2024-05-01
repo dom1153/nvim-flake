@@ -31,10 +31,14 @@ vim.keymap.set('n', '<A-p>', '<cmd>tabprevious<cr>', { silent = true, desc = 'Pr
 
 -- [[ WINDOW KEYMAPS ]]
 -- Window Navigation (standard)
-vim.keymap.set('n', '<leader>wh', '<C-W>h', { silent = true, desc = 'Go to window left' })
-vim.keymap.set('n', '<leader>wj', '<C-W>j', { silent = true, desc = 'Go to window down' })
-vim.keymap.set('n', '<leader>wk', '<C-W>k', { silent = true, desc = 'Go to window up' })
-vim.keymap.set('n', '<leader>wl', '<C-W>l', { silent = true, desc = 'Go to window right' })
+-- vim.keymap.set('n', '<leader>wh', '<C-W>h', { silent = true, desc = 'Go to window left' })
+-- vim.keymap.set('n', '<leader>wj', '<C-W>j', { silent = true, desc = 'Go to window down' })
+-- vim.keymap.set('n', '<leader>wk', '<C-W>k', { silent = true, desc = 'Go to window up' })
+-- vim.keymap.set('n', '<leader>wl', '<C-W>l', { silent = true, desc = 'Go to window right' })
+
+-- Location list / Quickfix list
+vim.keymap.set('n', '<leader>wl', '<cmd>lopen<cr>', { silent = true, desc = 'Open location list' })
+vim.keymap.set('n', '<leader>wc', '<cmd>copen<cr>', { silent = true, desc = 'Open quickfix list' })
 
 -- Window navigation (arrow keys)
 vim.keymap.set('n', '<Left>', '<C-W>h', { silent = true, desc = 'Go to window left' })
@@ -81,8 +85,8 @@ vim.keymap.set('n', 'n', 'nzzzv')
 vim.keymap.set('n', 'N', 'Nzzzv')
 
 -- [[ CONVENIENCE KEYMAPS ]]
--- Esc -> <cmd>nohighlight
-vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+-- Esc -> nohighlight , close quickfix list, close location list
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR><cmd>ccl<cr><cmd>lcl<cr>')
 
 -- <C-c> instead of pressing esc (insert mode) just because
 vim.keymap.set('i', '<C-c>', '<Esc>')

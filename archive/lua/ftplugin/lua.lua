@@ -19,10 +19,13 @@ local root_files = {
 }
 
 -- https://github.com/LuaLS/lua-language-server/wiki/Configuration-File
-vim.lsp.start {
+vim.lsp.start({
   name = 'lua_ls',
   cmd = { lua_ls_cmd },
+  filetypes = { 'lua' },
+  -- log_level = 2,
   root_dir = vim.fs.dirname(vim.fs.find(root_files, { upward = true })[1]),
+  single_file_support = true,
   capabilities = require('base.lsp').make_client_capabilities(),
   settings = {
     Lua = {
@@ -62,4 +65,4 @@ vim.lsp.start {
       },
     },
   },
-}
+})

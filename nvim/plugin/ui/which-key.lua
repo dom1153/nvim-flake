@@ -53,7 +53,8 @@ which_key.register({
   q = { name = '' .. spacing .. 'Quit/session' },
 
   -- code
-  c = { name = '󰅬' .. spacing .. 'code' },
+  -- put in a filler ke yso we actually register this even if no keyamps exists
+  c = { name = '󰅬' .. spacing .. 'Code', [' '] = { 'which_key_ignore' } },
 
   -- harpoon
   -- h = { name = '󰈺' .. spacing .. 'Harpoon' },
@@ -62,7 +63,7 @@ which_key.register({
   j = { name = '' .. spacing .. 'Filetype' },
 
   -- obsidian
-  k = { name = '' .. spacing .. 'Obsidian' },
+  O = { name = '' .. spacing .. 'Obsidian' },
 
   -- scribe
   s = { name = '' .. spacing .. 'Scratch' },

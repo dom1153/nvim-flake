@@ -34,6 +34,8 @@ local function trunc(trunc_width, trunc_len, hide_width, no_ellipsis)
   end
 end
 
+-- lua print(vim.inspect(vim.lsp.get_active_clients()))
+-- Note: many keys in lsp client config are arbitrarily defined (e.g. filetypes)
 local function lsp_server_name()
   local msg = 'No Active Lsp'
   local buf_ft = vim.api.nvim_buf_get_option(0, 'filetype')
@@ -42,7 +44,10 @@ local function lsp_server_name()
     return msg
   end
   for _, client in ipairs(clients) do
-    return client.name
+    local filetypes = client.config.filetypes
+    if filetypes and vim.fn.index(filetypes, buf_ft) ~= -1 then
+      return client.name
+    end
   end
   return msg
 end

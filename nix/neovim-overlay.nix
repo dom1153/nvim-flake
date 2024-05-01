@@ -97,6 +97,8 @@ with final.pkgs.lib; let
     zen-mode-nvim
     twilight-nvim
     indent-blankline-nvim
+    vim-sleuth
+    nvim-lspconfig
 
     # bleeding-edge plugins from flake inputs
     (mkNvimPlugin inputs.toggletasks "toggletasks")
@@ -112,6 +114,7 @@ with final.pkgs.lib; let
     nil # nix LSP
     clangStdenv # cpp
     lazygit
+    rust-analyzer # rust
 
     # formatters
     stylua ### lua | An opinionated Lua code formatter
