@@ -26,3 +26,9 @@ require('Comment').setup({})
 -- :h comment.ft
 local ft = require('Comment.ft')
 ft.kdl = { '//%s', '/*%s*/' }
+
+-- vim-startuptime
+-- use K to view more
+-- use gf to go to corresponding file (in a split)
+-- :help startuptime-configuration
+vim.keymap.set('n', '<leader>vs', '<cmd>StartupTime<CR>', { desc = 'Vim startup time' })

@@ -44,6 +44,7 @@ vim.keymap.set('n', '<leader>fg', '<cmd>Telescope glyph<cr>', { desc = ' Nerf
 vim.keymap.set('n', '<leader>fe', '<cmd>Telescope emoji<cr>', { desc = ' Emojis' })
 vim.keymap.set('n', '<leader>fu', '<cmd>Telescope undo<CR>', { desc = ' Undo tree' })
 vim.keymap.set('n', '<leader>fr', '<cmd>Telescope resume<CR>', { desc = ' Resume previous' })
+vim.keymap.set('n', '<leader>ff', fuzzy_grep, { desc = ' Fuzzy grep files' })
 -- [g]it group
 vim.keymap.set('n', '<leader>gd', builtin.git_bcommits, { desc = ' Git diff history' })
 vim.keymap.set('n', '<leader>gf', builtin.git_files, { desc = ' Git files' })
@@ -57,7 +58,7 @@ vim.keymap.set('n', '<leader>vm', builtin.man_pages, { desc = ' Vim man pages
 vim.keymap.set('n', '<leader>vo', builtin.vim_options, { desc = ' Vim options' })
 vim.keymap.set('n', '<leader>vr', builtin.oldfiles, { desc = ' Vim [r]ecent files (global)' })
 -- base group
-vim.keymap.set('n', '<leader>/', fuzzy_grep, { desc = ' Grep files' })
+vim.keymap.set('n', '<leader>/', builtin.live_grep, { desc = ' Find files' })
 vim.keymap.set('n', '<leader><space>', builtin.find_files, { desc = ' Find files' })
 vim.keymap.set('n', '<leader>o', buffer_mru, { desc = ' Buffers' })
 

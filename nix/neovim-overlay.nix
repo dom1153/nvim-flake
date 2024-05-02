@@ -99,6 +99,7 @@ with final.pkgs.lib; let
     indent-blankline-nvim
     vim-sleuth
     nvim-lspconfig
+    vim-startuptime
 
     # bleeding-edge plugins from flake inputs
     (mkNvimPlugin inputs.toggletasks "toggletasks")
