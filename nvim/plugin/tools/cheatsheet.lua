@@ -8,8 +8,8 @@ vim.g.did_load_cheatsheet_plugin = true
 -- [[ HELPER FUNCTIONS ]]
 
 -- [[ KEYMAPS ]]
-vim.keymap.set('n', '<leader>p', '<cmd>Cheatsheet<CR>', { desc = 'Cheatsheet' })
-vim.keymap.set('n', '<leader>?', '<nop>')
+vim.keymap.set('n', '<leader>P', '<cmd>Cheatsheet<CR>', { desc = 'Cheatsheet' })
+-- vim.keymap.set('n', '<leader>?', '<nop>')
 
 -- [[ SETUP ]]
 require('cheatsheet').setup({
