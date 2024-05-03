@@ -23,6 +23,10 @@
       url = "github:Ostralyan/scribe.nvim";
       flake = false;
     };
+    obsidian-nvim = {
+      url = "github:epwalsh/obsidian.nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {
