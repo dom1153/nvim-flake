@@ -9,7 +9,11 @@ vim.keymap.set('n', '<leader>gl', '<cmd>LazyGit<CR>', { desc = 'LazyGit (root)' 
 
 -- :h leap-custom-mappings
 -- rebinds s, S, gs (main) and x (visual/motion only)
-require('leap').create_default_mappings()
+-- require('leap').create_default_mappings()
+vim.keymap.set('n', 's', '<Plug>(leap)')
+vim.keymap.set('n', 'S', '<Plug>(leap-from-window)')
+vim.keymap.set({ 'x', 'o' }, 's', '<Plug>(leap-forward)')
+vim.keymap.set({ 'x', 'o' }, 'S', '<Plug>(leap-backward)')
 
 -- https://github.com/kylechui/nvim-surround/blob/main/lua/nvim-surround/config.lua
 -- :h nvim-surround.configuration for individual categories
