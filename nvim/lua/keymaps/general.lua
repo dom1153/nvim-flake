@@ -1,7 +1,7 @@
 -- [[ CLIPBOARD / REGISTER KEYMAPS ]]
 -- clipboard and register management (paste seems to inherit clipboard by default)
 vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y', { desc = 'Copy to system clipboard (motion)' })
-vim.keymap.set({ 'n', 'v' }, '<leader>d', '"+p', { desc = 'Paste from clipboard' })
+vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p', { desc = 'Paste from clipboard' })
 vim.keymap.set({ 'n', 'v' }, '<leader>d', '"_d', { desc = 'Delete to void register (motion)' })
 
 -- puts the overwritten text to the void buffer (clipboard stays the same)
