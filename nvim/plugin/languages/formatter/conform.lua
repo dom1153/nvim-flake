@@ -49,7 +49,7 @@ require('conform').setup({
   timeout_ms = 500,
   lsp_fallback = true,
 
-  notify_on_error = true,
+  -- notify_on_error = true,
   formatters = {
     -- yamlfix env untested
     yamlfix = {
@@ -84,6 +84,8 @@ require('conform').setup({
     rust = { 'rustfmt' },
 
     java = { 'google-java-format' },
+
+    go = { 'gofmt' },
 
     fish = { 'fish_indent' },
 

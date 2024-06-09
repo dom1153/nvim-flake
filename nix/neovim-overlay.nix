@@ -116,6 +116,7 @@ with final.pkgs.lib; let
     clangStdenv # cpp
     lazygit
     rust-analyzer # rust
+    gopls # go language server
 
     # formatters
     stylua ### lua | An opinionated Lua code formatter
@@ -133,6 +134,7 @@ with final.pkgs.lib; let
     nodePackages.fixjson ### json
     yamlfmt ### yaml | google
     # python311Packages.yamlfix ### opinionated; issues installing on darwin (pip)
+    go ### go, gofmt
 
     # linters
     statix # nix
