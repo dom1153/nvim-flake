@@ -113,10 +113,12 @@ with final.pkgs.lib; let
     # language servers, etc.
     lua-language-server
     nil # nix LSP
-    clangStdenv # cpp
+    llvmPackages_16.clang-unwrapped ### c, cpp
     lazygit
-    rust-analyzer # rust
+    rust-analyzer # rust (no completion?)
     gopls # go language server
+    vscode-langservers-extracted ### html, css, json
+    nodePackages.bash-language-server ### bash
 
     # formatters
     stylua ### lua | An opinionated Lua code formatter
