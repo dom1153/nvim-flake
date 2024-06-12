@@ -5,29 +5,38 @@ vim.g.did_load_conform_plugin = true
 
 -- [[ VIM OPTIONS ]]
 vim.g.autoformat = true
-
--- there exists a recipe to do conform toggle...
-vim.api.nvim_create_autocmd('BufWritePre', {
-  pattern = '*',
-  callback = function(args)
-    local buf = vim.b.autoformat
-    local globe = vim.g.autoformat
-    if false == buf then
-    elseif buf or globe then
-      require('conform').format({
-        bufnr = args.buf,
-        lsp_fallback = true,
-        timeout_ms = 500,
-      })
-    end
-  end,
-})
-
+--
+-- -- there exists a recipe to do conform toggle...
+-- vim.api.nvim_create_autocmd('BufWritePre', {
+--   pattern = '*',
+--   callback = function(args)
+--     local buf = vim.b.autoformat
+--     local globe = vim.g.autoformat
+--     if false == buf then
+--     elseif buf or globe then
+--       require('conform').format({
+--         bufnr = args.buf,
+--         -- async ignores timout ; for some reason in practice my fomrmatters run slow...
+--         async = true,
+--         lsp_fallback = true,
+--         -- timeout_ms = 500,
+--       })
+--     end
+--   end,
+-- })
+--
 -- [[ DEFINES ]]
 
 -- [[ HELPER FUNCTIONS ]]
 local function autoformat_toggle_buffer()
   -- never initially set buffer autoformat value
+  -- if nil == vim.b.autoformat then
+  --   -- so the first time we toggle, we want to disable autoformat
+  --   vim.b.autoformat = false
+  -- else
+  --   vim.b.autoformat = not vim.b.autoformat
+  -- end
+
   if nil == vim.b.autoformat then
     -- so the first time we toggle, we want to disable autoformat
     vim.b.autoformat = false
@@ -41,13 +50,23 @@ local function autoformat_toggle_global()
 end
 
 -- [[ KEYMAPS ]]
-vim.keymap.set('n', '<leader>uf', autoformat_toggle_buffer, { desc = 'Toggle auto format (buffer)' })
-vim.keymap.set('n', '<leader>uF', autoformat_toggle_global, { desc = 'Toggle auto format (global)' })
+-- vim.keymap.set('n', '<leader>uf', autoformat_toggle_buffer, { desc = 'Toggle auto format (buffer)' })
+-- vim.keymap.set('n', '<leader>uF', autoformat_toggle_global, { desc = 'Toggle auto format (global)' })
 
 -- [[ SETUP ]]
 require('conform').setup({
-  timeout_ms = 500,
+  -- timeout_ms = 500,
   lsp_fallback = true,
+
+  format_on_save = function(bufnr)
+    -- Disable with a global or buffer-local variable
+    if vim.g.autoformat == false or vim.b[bufnr].autoformat == false then
+      return
+    end
+    -- timeout_ms does not apply with async (default 1000ms)
+    -- async is not great with format_on_save
+    return { lsp_fallback = true }
+  end,
 
   -- notify_on_error = true,
   formatters = {
