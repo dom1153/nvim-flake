@@ -48,6 +48,7 @@ vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 
 --[[ BEHAVIOR OPTIONS ]]
+vim.o.clipboard = 'unnamedplus' -- Sync clipboard between OS and Neovim. :help clipboard
 vim.o.mouse = 'a'
 -- remove the "How-to disable mouse" menu item and the separator above it (:h default-mouse)
 vim.cmd([[aunmenu PopUp.How-to\ disable\ mouse]])

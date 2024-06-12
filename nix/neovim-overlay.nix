@@ -113,9 +113,12 @@ with final.pkgs.lib; let
     # language servers, etc.
     lua-language-server
     nil # nix LSP
-    clangStdenv # cpp
+    llvmPackages_16.clang-unwrapped ### c, cpp
     lazygit
-    rust-analyzer # rust
+    rust-analyzer # rust (no completion?)
+    gopls # go language server
+    vscode-langservers-extracted ### html, css, json
+    nodePackages.bash-language-server ### bash
 
     # formatters
     stylua ### lua | An opinionated Lua code formatter
@@ -133,6 +136,7 @@ with final.pkgs.lib; let
     nodePackages.fixjson ### json
     yamlfmt ### yaml | google
     # python311Packages.yamlfix ### opinionated; issues installing on darwin (pip)
+    go ### go, gofmt
 
     # linters
     statix # nix

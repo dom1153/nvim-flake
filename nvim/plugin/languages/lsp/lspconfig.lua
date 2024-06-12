@@ -94,3 +94,21 @@ require('lspconfig').nil_ls.setup({})
 
 -- [[ RUST (cargo projects only) ]]
 require('lspconfig').rust_analyzer.setup({})
+
+-- -- [[ GOLANG (lint server and client) ]]
+-- require('lspconfig').golangci_lint_ls.setup({})
+
+-- [[ GOOGLE GOLANG ]]
+require('lspconfig').gopls.setup({})
+
+-- requires manual compile zzz
+-- -- [[ FISH SHELL ]]
+-- require('lspconfig').fish_lsp.setup({})
+
+-- [[ BASH SHELL ]]
+require('lspconfig').bashls.setup({})
+
+-- [[ VSCODE WEB ]]
+require('lspconfig').cssls.setup({})
+require('lspconfig').html.setup({})
+require('lspconfig').jsonls.setup({})
