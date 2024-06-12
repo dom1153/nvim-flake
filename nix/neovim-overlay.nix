@@ -115,10 +115,10 @@ with final.pkgs.lib; let
     nil # nix LSP
     llvmPackages_16.clang-unwrapped ### c, cpp
     lazygit
-    rust-analyzer # rust (no completion?)
     gopls # go language server
     vscode-langservers-extracted ### html, css, json
     nodePackages.bash-language-server ### bash
+    rust-analyzer # rust (no completion?)
 
     # formatters
     stylua ### lua | An opinionated Lua code formatter
@@ -127,11 +127,11 @@ with final.pkgs.lib; let
     prettierd ### js |  Prettier, as a daemon
     nodePackages.prettier ### js | Prettier is an opinionated code formatter
     alejandra ### nix | The Uncompromising Nix Code Formatter
-    rustfmt ### rust | A tool for formatting Rust code according to style guidelines
     google-java-format ### java |  zifter-google-java-format
     fish ### fish
     shfmt ### bash / sh
     # shellharden ### bash formatting -> quotes too mnay things (e.g. lists...)
+    rustfmt ### rust | A tool for formatting Rust code according to style guidelines
     deno ### json
     nodePackages.fixjson ### json
     yamlfmt ### yaml | google
