@@ -92,5 +92,5 @@ require('lspconfig').lua_ls.setup({
 -- [[ NIX ]]
 require('lspconfig').nil_ls.setup({})
 
--- [[ RUST ]]
+-- [[ RUST (cargo projects only) ]]
 require('lspconfig').rust_analyzer.setup({})
