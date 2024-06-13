@@ -132,6 +132,7 @@ with final.pkgs.lib; let
     shfmt ### bash / sh
     # shellharden ### bash formatting -> quotes too mnay things (e.g. lists...)
     rustfmt ### rust | A tool for formatting Rust code according to style guidelines
+    ### ^^^ only the first format may timeout??? (via conform)
     deno ### json
     nodePackages.fixjson ### json
     yamlfmt ### yaml | google

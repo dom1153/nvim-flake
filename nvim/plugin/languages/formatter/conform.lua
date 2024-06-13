@@ -50,8 +50,8 @@ local function autoformat_toggle_global()
 end
 
 -- [[ KEYMAPS ]]
--- vim.keymap.set('n', '<leader>uf', autoformat_toggle_buffer, { desc = 'Toggle auto format (buffer)' })
--- vim.keymap.set('n', '<leader>uF', autoformat_toggle_global, { desc = 'Toggle auto format (global)' })
+vim.keymap.set('n', '<leader>uf', autoformat_toggle_buffer, { desc = 'Toggle auto format (buffer)' })
+vim.keymap.set('n', '<leader>uF', autoformat_toggle_global, { desc = 'Toggle auto format (global)' })
 
 -- [[ SETUP ]]
 require('conform').setup({
