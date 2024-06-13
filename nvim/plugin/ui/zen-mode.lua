@@ -10,8 +10,8 @@ vim.g.did_load_zen_mode_plugin = true
 -- local project_files = function()
 
 -- [[ KEYMAPS ]]
-vim.keymap.set('n', '<leader>z', '<cmd>ZenMode<cr>', { desc = ' ZenMode' })
-vim.keymap.set('n', '<A-f>', '<cmd>ZenMode<cr>', { desc = ' ZenMode' })
+vim.keymap.set('n', '<leader>z', '<cmd>ZenMode<cr>', { desc = 'Zen mode' })
+vim.keymap.set('n', '<A-f>', '<cmd>ZenMode<cr>', { desc = 'Zen mode' })
 
 -- [[ SETUP ]]
 -- :h zen-mode.nvim-zen-mode-configuration

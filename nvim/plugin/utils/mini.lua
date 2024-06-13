@@ -12,7 +12,7 @@ local function mini_files_current_buffer()
 end
 
 -- [[ KEYMAPS ]]
-vim.keymap.set('n', '<leader>e', mini_files_current_buffer, { desc = 'File Explorer' })
+vim.keymap.set('n', '<leader>e', mini_files_current_buffer, { desc = 'File explorer' })
 -- put on a random background if you feel like it (mini.hue)
 vim.keymap.set('n', '<leader>ur', '<cmd>colorscheme randomhue<cr>', { silent = true, desc = 'Theme random' })
 vim.keymap.set('n', '<leader>uR', '<cmd>colorscheme catppuccin<cr>', { silent = true, desc = 'Theme catppuccin' })

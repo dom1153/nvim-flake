@@ -6,8 +6,8 @@ vim.g.did_load_obsidian_plugin = true
 -- Note: I don't like that this plugin auto-creates daily and concepts folder...
 
 -- [[ VIM OPTIONS ]]
--- hides formatting unless cursor-over, like obsidian hybrid
-vim.o.conceallevel = 1
+-- -- hides formatting unless cursor-over, like obsidian hybrid
+-- vim.o.conceallevel = 1
 
 -- [[ DEFINES ]]
 local util = require('obsidian.util')
