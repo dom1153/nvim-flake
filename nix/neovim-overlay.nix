@@ -113,12 +113,23 @@ with final.pkgs.lib; let
     # language servers, etc.
     lua-language-server
     nil # nix LSP
-    llvmPackages_16.clang-unwrapped ### c, cpp
+    llvmPackages_16.clang-unwrapped ### c, cpp (clang)
+    cmake-language-server ### cmake
     lazygit
     gopls # go language server
     vscode-langservers-extracted ### html, css, json
     nodePackages.bash-language-server ### bash
-    rust-analyzer # rust (no completion?)
+
+    ### rust
+    # rustup ### cargo, cargo-fmt, rustc, rustfmt, rustdoc, rust-analyzer
+    cargo
+    rustfmt
+    rustc
+    rust-analyzer
+    clippy ### rust (not included in rustup package)
+
+    # The package provided by our custom overlay. Includes cargo, Clippy, cargo-fmt,
+    # rustdoc, rustfmt, and other tools.
 
     # formatters
     stylua ### lua | An opinionated Lua code formatter
@@ -131,7 +142,6 @@ with final.pkgs.lib; let
     fish ### fish
     shfmt ### bash / sh
     # shellharden ### bash formatting -> quotes too mnay things (e.g. lists...)
-    rustfmt ### rust | A tool for formatting Rust code according to style guidelines
     ### ^^^ only the first format may timeout??? (via conform)
     deno ### json
     nodePackages.fixjson ### json

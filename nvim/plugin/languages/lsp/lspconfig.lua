@@ -54,7 +54,13 @@ autocmd('LspAttach', {
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 
 -- [[ CLANGD ]]
+-- relies on compile_commands.json
+-- https://clangd.llvm.org/installation#compile_commandsjson
 require('lspconfig').clangd.setup({})
+
+-- [[ CMAKE ]]
+-- only for cmake filetype... and not sure what it does
+require('lspconfig').cmake.setup({})
 
 -- [[ LUA ]]
 require('lspconfig').lua_ls.setup({
