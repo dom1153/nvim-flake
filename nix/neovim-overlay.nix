@@ -119,9 +119,12 @@ with final.pkgs.lib; let
     gopls # go language server
     vscode-langservers-extracted ### html, css, json
     nodePackages.bash-language-server ### bash
+    nodePackages."@astrojs/language-server" ### provides formatter
+    nodePackages.typescript-language-server
 
     ### rust
-    # rustup ### cargo, cargo-fmt, rustc, rustfmt, rustdoc, rust-analyzer
+    # rustup ### rustup package does not 'pick' a rust version
+    ### consider using an overlay if theres any other rustpackages missing
     cargo
     rustfmt
     rustc

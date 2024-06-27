@@ -55,6 +55,7 @@ autocmd('LspAttach', {
 
 -- [[ CLANGD ]]
 -- relies on compile_commands.json
+-- provides formatter
 -- https://clangd.llvm.org/installation#compile_commandsjson
 require('lspconfig').clangd.setup({})
 
@@ -118,3 +119,10 @@ require('lspconfig').bashls.setup({})
 require('lspconfig').cssls.setup({})
 require('lspconfig').html.setup({})
 require('lspconfig').jsonls.setup({})
+
+-- [[ ASTRO ]]
+-- provides formatter
+require('lspconfig').astro.setup({})
+
+-- [[ TYPESCRIPT ]]
+require('lspconfig').tsserver.setup({})
