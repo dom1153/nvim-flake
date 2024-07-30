@@ -124,5 +124,6 @@ require('lspconfig').jsonls.setup({})
 -- provides formatter
 require('lspconfig').astro.setup({})
 
--- [[ TYPESCRIPT ]]
-require('lspconfig').tsserver.setup({})
+-- just use vscode for web dev
+-- -- [[ TYPESCRIPT ]]
+-- require('lspconfig').tsserver.setup({})
