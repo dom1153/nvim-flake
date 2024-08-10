@@ -27,6 +27,10 @@
       url = "github:epwalsh/obsidian.nvim";
       flake = false;
     };
+    fm-nvim = {
+      url = "github:is0n/fm-nvim";
+      flake = false;
+    };
   };
 
   outputs = inputs @ {

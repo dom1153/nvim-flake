@@ -106,6 +106,7 @@ with final.pkgs.lib; let
     (mkNvimPlugin inputs.telescope-glyph "telescope-glyph")
     (mkNvimPlugin inputs.scribe-nvim "scribe") # depends on nui-nvim and telescope
     (mkNvimPlugin inputs.obsidian-nvim "obsidian-nvim") # depends on nui-nvim and telescope
+    (mkNvimPlugin inputs.fm-nvim "fm-nvim")
     # (mkNvimPlugin inputs.wf-nvim "wf.nvim") # (example) keymap hints | https://github.com/Cassin01/wf.nvim
   ];
 
@@ -151,6 +152,8 @@ with final.pkgs.lib; let
     yamlfmt ### yaml | google
     # python311Packages.yamlfix ### opinionated; issues installing on darwin (pip)
     go ### go, gofmt
+
+    lf ### for fm-nvim
 
     # linters
     statix # nix
