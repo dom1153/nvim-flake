@@ -22,7 +22,8 @@ Get Filetype | :set filetype?
 Get Colorscheme | :colorscheme
 Increase number | <C-A>
 Decrease number | <C-X>
-Get variable | :lua vim.print(vim.o.shell)
+Get print variable | :lua vim.print(vim.o.shell)
+Get print expand | :lua vim.print(vim.fn.expand('%'))
 Go to previous file | <C-6>
 Check make program | :set makeprg?
 Expand normal help-pages ("only window") | <c-w> <c-o>
@@ -30,4 +31,3 @@ Expand normal help-pages ("only window") | <c-w> <c-o>
 Open link under cursor (system app) | gx
 Uppercase motions | gU
 Lowercase motions | gu
-

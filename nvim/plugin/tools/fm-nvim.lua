@@ -8,7 +8,9 @@ vim.g.did_load_fm_nvim_plugin = true
 -- [[ HELPER FUNCTIONS ]]
 
 -- [[ KEYMAPS ]]
-vim.keymap.set('n', '<leader>e', '<cmd>Lf<CR>', { desc = 'File Explorer (lf)' })
+-- vim.keymap.set('n', '<leader>e', '<cmd>Lf ' .. vim.fn.expand('%:p:h') .. '<CR>', { desc = 'File Explorer (lf)' })
+-- VVV janky, but it'll do
+vim.keymap.set('n', '<leader>e', '<cmd>Lf ' .. '%:p:h' .. '<CR>', { desc = 'File Explorer (lf)' })
 
 -- [[ SETUP ]]
 require('fm-nvim').setup({
