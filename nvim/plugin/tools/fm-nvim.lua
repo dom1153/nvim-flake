@@ -17,11 +17,12 @@ require('fm-nvim').setup({
   ui = { float = { border = 'single' } },
   -- Todo: is there a way to tell LF to open the vim command? (read plugin source)
   -- e.g. set an environment variable
+  -- Using standalone letters (e.g. 'e' are problematci for like, renaming a file with a letter 'e')
   mappings = {
     vert_split = '<C-v>',
     horz_split = '<C-h>',
-    tabedit = 't',
-    edit = 'e',
+    tabedit = '<C-t>',
+    edit = '<C-e>',
     ESC = '<ESC>',
   },
 })
